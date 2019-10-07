@@ -26,6 +26,8 @@
 		AB7050EA23297698002F1CBA /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7050E923297698002F1CBA /* BaseView.swift */; };
 		ABD08175231F01DD004185E0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD08174231F01DD004185E0 /* DetailViewController.swift */; };
 		E83F594C23476CDE00774D17 /* CollectionCommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83F594B23476CDE00774D17 /* CollectionCommonViewController.swift */; };
+		EDACD0F0234AD7BF0029A35B /* LayoutAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDACD0EE234AD7BF0029A35B /* LayoutAnchor.swift */; };
+		EDACD0F1234AD7BF0029A35B /* CBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDACD0EF234AD7BF0029A35B /* CBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		AB7050E923297698002F1CBA /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		ABD08174231F01DD004185E0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E83F594B23476CDE00774D17 /* CollectionCommonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCommonViewController.swift; sourceTree = "<group>"; };
+		EDACD0EE234AD7BF0029A35B /* LayoutAnchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutAnchor.swift; sourceTree = "<group>"; };
+		EDACD0EF234AD7BF0029A35B /* CBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +187,7 @@
 		AB7050EB2329787F002F1CBA /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				EDACD0ED234AD7BF0029A35B /* CBuilder */,
 				ABD08176231F021C004185E0 /* Enums */,
 				AB1D597822DD579200A66B70 /* NetworkManager.swift */,
 				AB340A4822E7A34E0014DD40 /* URLToImageExtension.swift */,
@@ -205,6 +210,15 @@
 				E83F594B23476CDE00774D17 /* CollectionCommonViewController.swift */,
 			);
 			path = "Common Collection";
+			sourceTree = "<group>";
+		};
+		EDACD0ED234AD7BF0029A35B /* CBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				EDACD0EE234AD7BF0029A35B /* LayoutAnchor.swift */,
+				EDACD0EF234AD7BF0029A35B /* CBuilder.swift */,
+			);
+			path = CBuilder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,12 +321,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDACD0F1234AD7BF0029A35B /* CBuilder.swift in Sources */,
 				AB1E211622E235A900B30691 /* URLEnum.swift in Sources */,
 				AB1D597922DD579200A66B70 /* NetworkManager.swift in Sources */,
 				AB1D595C22DD55B700A66B70 /* RickNMorty.xcdatamodeld in Sources */,
 				ABD08175231F01DD004185E0 /* DetailViewController.swift in Sources */,
 				AB5367ED231DE1B600180C08 /* ReuserIdentifierEnum.swift in Sources */,
 				AB1D595422DD55B700A66B70 /* AppDelegate.swift in Sources */,
+				EDACD0F0234AD7BF0029A35B /* LayoutAnchor.swift in Sources */,
 				AB1E210F22DFFA9B00B30691 /* CharactersViewController.swift in Sources */,
 				AB7050E8232974D0002F1CBA /* DetailView.swift in Sources */,
 				E83F594C23476CDE00774D17 /* CollectionCommonViewController.swift in Sources */,
