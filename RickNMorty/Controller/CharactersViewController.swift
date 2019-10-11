@@ -31,7 +31,7 @@ class CharactersViewController: CollectionCommonViewController {
         self.title = "RickNMorty"
         self.navigationController?.navigationBar.prefersLargeTitles = true
     }
-
+    
     func fetchChars() {
         self.loadingIndicator.isHidden = false
         self.loadingIndicator.startAnimating()

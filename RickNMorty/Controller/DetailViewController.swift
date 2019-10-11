@@ -26,6 +26,10 @@ class DetailViewController: UIViewController {
     
     override func loadView() {
         self.view = detailView
+        
+        if let character = character {
+            detailView.updateUI(character: character)
+        }
     }
 
 }
