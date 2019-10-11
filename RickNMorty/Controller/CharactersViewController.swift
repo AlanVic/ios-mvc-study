@@ -12,16 +12,19 @@ class CharactersViewController: CollectionCommonViewController {
     
     var characters = [Character]()
     
+    let loadingIndicator = UIActivityIndicatorView(style: .gray)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.fetchChars()
+        
         self.view.backgroundColor = .white
         charCollectionView.delegate = self
         charCollectionView.dataSource = self
       
         self.setupCollectionViewConstraints()
         setupNavigationBar()
+        
+        self.fetchChars()
     }
     
     private func setupNavigationBar(){
@@ -30,12 +33,17 @@ class CharactersViewController: CollectionCommonViewController {
     }
 
     func fetchChars() {
+        self.loadingIndicator.isHidden = false
+        self.loadingIndicator.startAnimating()
+        
         let getRequest = NetworkManager.sharedInstance.createGetRequest(url: CharsURL.allCharacters.rawValue)
         NetworkManager.sharedInstance.sendGetRequest(getRequest: getRequest, type: Result.self) { (result, error) in
             if let requestResponse = result {
                 self.characters = requestResponse.results
 //                print(self.characters)
                 DispatchQueue.main.async {
+                    self.loadingIndicator.stopAnimating()
+                    self.loadingIndicator.isHidden = true
                     self.charCollectionView.reloadData()
                 }
             } else {
