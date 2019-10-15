@@ -15,7 +15,11 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        if #available(iOS 13.0, *) {
+            view.backgroundColor = .systemBackground
+        } else {
+            view.backgroundColor = .white
+        }
         setupNavigation()
     }
     
@@ -26,6 +30,10 @@ class DetailViewController: UIViewController {
     
     override func loadView() {
         self.view = detailView
+        
+        if let character = character {
+            detailView.updateUI(character: character)
+        }
     }
 
 }
