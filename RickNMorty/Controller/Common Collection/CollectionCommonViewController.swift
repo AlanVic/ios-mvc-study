@@ -18,7 +18,11 @@ class CollectionCommonViewController: UIViewController {
         let layout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(CharactersCollectionViewCell.self, forCellWithReuseIdentifier: ReuseIdentifier.charCollectionViewCell.rawValue)
-        collectionView.backgroundColor = .clear
+        if #available(iOS 13.0, *) {
+            collectionView.backgroundColor = .systemBackground
+        } else {
+            collectionView.backgroundColor = .white
+        }
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.contentInset = UIEdgeInsets(top: 23, left: 16, bottom: 10, right: 16)
         

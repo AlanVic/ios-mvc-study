@@ -22,7 +22,6 @@ class DetailView: BaseView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
-        label.textColor = .black
         label.text = "Nome:"
         label.font = label.font.withSize(24)
         return label
