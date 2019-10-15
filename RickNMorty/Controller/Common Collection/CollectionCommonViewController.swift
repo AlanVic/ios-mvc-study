@@ -8,11 +8,7 @@
 
 import UIKit
 
-
-
 class CollectionCommonViewController: UIViewController {
-    
-   
     
     let charCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -29,7 +25,5 @@ class CollectionCommonViewController: UIViewController {
         super.viewDidLoad()
 
     }
-    
-
     
 }
