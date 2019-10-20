@@ -24,7 +24,7 @@ extension CharactersCollectionViewCell {
     
     func setupBlurViewConstraints() {
         
-        blurView.cBuilder{ (make) in
+        blurView.cBuild{ (make) in
             make.leading.equal(to: charImageView.leadingAnchor)
             make.trailing.equal(to: charImageView.trailingAnchor)
             make.bottom.equal(to: charImageView.bottomAnchor)
@@ -39,7 +39,7 @@ extension CharactersCollectionViewCell {
     func setupNameLabelConstraints() {
         
         
-        nameLabel.cBuilder{ (make) in
+        nameLabel.cBuild{ (make) in
             make.leading.equal(to: blurView.leadingAnchor, offsetBy: 12)
             make.trailing.equal(to: blurView.trailingAnchor, offsetBy: -12)
         }

@@ -9,8 +9,6 @@
 import UIKit
 
 extension UIView {
-    
-    
     /// This method add arrange of view in view
     func addSubviews(_ views: [UIView]) {
         views.forEach { (view) in
@@ -19,7 +17,7 @@ extension UIView {
         }
     }
     
-    func cBuilder(_ make : (LayoutProxy) -> Void) {
+    func cBuild(_ make : (LayoutProxy) -> ()) {
         translatesAutoresizingMaskIntoConstraints = false
         make(LayoutProxy(view: self))
     }
@@ -33,7 +31,7 @@ extension UIView {
         }
         
         if let bott = bottom {
-            bottomAnchor.constraint(equalTo: bott, constant: constantBottom).isActive = true
+             bottomAnchor.constraint(equalTo: bott, constant: constantBottom).isActive = true
         }
         
         if let leading = left {
@@ -44,6 +42,18 @@ extension UIView {
             trailing.constraint(equalTo: trailing, constant: constantRight).isActive = true
         }
     }
+    
+    
+    func cBuild(to anchor: TypeAnchor, with priotity: CGFloat) {
+        switch anchor {
+        case .top:
+            break
+        default:
+            break
+        }
+        
+
+        }
     
     /// This method is calling to set all constraints in to respective anchors
     func cBuild(top: NSLayoutYAxisAnchor?, bottom: NSLayoutYAxisAnchor?, left: NSLayoutXAxisAnchor?, right: NSLayoutXAxisAnchor?) {
@@ -88,19 +98,31 @@ extension UIView {
         self.heightAnchor.constraint(equalTo: height).isActive = true
     }
     
-    
     /// Method calling when you to consider your view equal to
     func cBuild(make: ViewAction) {
         self.translatesAutoresizingMaskIntoConstraints = false
         switch make {
         case .fillSuperview:
             equalToSuperView()
+        case let .fillSuperviewWithPaddings(top, leading, trailing, bottom):
+            equalToSuperView(top: top, leading: leading, trailing: trailing, bottom: bottom)
         case .centerInSuperView:
             equalToSuperView()
         case .centerXInSuperView:
             centerXInSuperView()
         case .centerYInSuperView:
             centerYInSuperView()
+        }
+    }
+    
+    
+    func cBuild(make: ConstraintAction) {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        switch make {
+        case .deactivateAllConstraints:
+            constraints.forEach { (constraint) in
+                constraint.isActive = false
+            }
         }
     }
     
@@ -112,31 +134,44 @@ extension UIView {
     fileprivate func centerXInSuperView() {
         guard let spView = superview else {return}
         NSLayoutConstraint.activate([
-            centerXAnchor.constraint(equalTo: spView.centerXAnchor)
+            centerXAnchor.constraint(equalTo: spView.centerXAnchor),
             ])
     }
     
     fileprivate func centerYInSuperView() {
         guard let spView = superview else {return}
         NSLayoutConstraint.activate([
-            centerYAnchor.constraint(equalTo: spView.centerYAnchor)
+            centerYAnchor.constraint(equalTo: spView.centerYAnchor),
             ])
     }
-    
-    fileprivate func equalToSuperView() {
+        
+    fileprivate func equalToSuperView(top: CGFloat = 0, leading: CGFloat = 0, trailing: CGFloat = 0, bottom: CGFloat = 0) {
         guard let spView = superview else {return}
         NSLayoutConstraint.activate([
-            topAnchor.constraint(equalTo: spView.topAnchor),
-            leadingAnchor.constraint(equalTo: spView.leadingAnchor),
-            trailingAnchor.constraint(equalTo: spView.trailingAnchor),
-            bottomAnchor.constraint(equalTo: spView.bottomAnchor)
-            ])
+            topAnchor.constraint(equalTo: spView.topAnchor, constant: top),
+            leadingAnchor.constraint(equalTo: spView.leadingAnchor, constant: leading),
+            trailingAnchor.constraint(equalTo: spView.trailingAnchor, constant: -trailing),
+            bottomAnchor.constraint(equalTo: spView.bottomAnchor, constant: -bottom)
+        ])
     }
 }
 
 enum ViewAction {
     case fillSuperview
+    case fillSuperviewWithPaddings(top: CGFloat, leading: CGFloat, trailing: CGFloat, bottom: CGFloat)
     case centerInSuperView
     case centerXInSuperView
     case centerYInSuperView
+}
+
+
+enum ConstraintAction {
+    case deactivateAllConstraints
+}
+
+enum TypeAnchor {
+    case top
+    case leading
+    case trailing
+    case bottom
 }

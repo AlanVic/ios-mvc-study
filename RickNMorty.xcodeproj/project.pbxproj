@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6083434323495147006FF9D3 /* SendCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6083434223495147006FF9D3 /* SendCharacter.swift */; };
+		9283129A235CF99100B9668C /* LayoutAnchor+operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92831297235CF99000B9668C /* LayoutAnchor+operations.swift */; };
+		9283129B235CF99100B9668C /* LayoutProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92831298235CF99000B9668C /* LayoutProperty.swift */; };
+		9283129C235CF99100B9668C /* LayoutProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92831299235CF99000B9668C /* LayoutProxy.swift */; };
 		AB1D595422DD55B700A66B70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1D595322DD55B700A66B70 /* AppDelegate.swift */; };
 		AB1D595C22DD55B700A66B70 /* RickNMorty.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB1D595A22DD55B700A66B70 /* RickNMorty.xcdatamodeld */; };
 		AB1D595E22DD55BB00A66B70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB1D595D22DD55BB00A66B70 /* Assets.xcassets */; };
@@ -42,6 +45,9 @@
 
 /* Begin PBXFileReference section */
 		6083434223495147006FF9D3 /* SendCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendCharacter.swift; sourceTree = "<group>"; };
+		92831297235CF99000B9668C /* LayoutAnchor+operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LayoutAnchor+operations.swift"; sourceTree = "<group>"; };
+		92831298235CF99000B9668C /* LayoutProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutProperty.swift; sourceTree = "<group>"; };
+		92831299235CF99000B9668C /* LayoutProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutProxy.swift; sourceTree = "<group>"; };
 		AB1D595022DD55B700A66B70 /* RickNMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickNMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB1D595322DD55B700A66B70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB1D595B22DD55B700A66B70 /* RickNMorty.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RickNMorty.xcdatamodel; sourceTree = "<group>"; };
@@ -217,6 +223,9 @@
 			children = (
 				EDACD0EE234AD7BF0029A35B /* LayoutAnchor.swift */,
 				EDACD0EF234AD7BF0029A35B /* CBuilder.swift */,
+				92831297235CF99000B9668C /* LayoutAnchor+operations.swift */,
+				92831298235CF99000B9668C /* LayoutProperty.swift */,
+				92831299235CF99000B9668C /* LayoutProxy.swift */,
 			);
 			path = CBuilder;
 			sourceTree = "<group>";
@@ -323,11 +332,13 @@
 			files = (
 				EDACD0F1234AD7BF0029A35B /* CBuilder.swift in Sources */,
 				AB1E211622E235A900B30691 /* URLEnum.swift in Sources */,
+				9283129B235CF99100B9668C /* LayoutProperty.swift in Sources */,
 				AB1D597922DD579200A66B70 /* NetworkManager.swift in Sources */,
 				AB1D595C22DD55B700A66B70 /* RickNMorty.xcdatamodeld in Sources */,
 				ABD08175231F01DD004185E0 /* DetailViewController.swift in Sources */,
 				AB5367ED231DE1B600180C08 /* ReuserIdentifierEnum.swift in Sources */,
 				AB1D595422DD55B700A66B70 /* AppDelegate.swift in Sources */,
+				9283129C235CF99100B9668C /* LayoutProxy.swift in Sources */,
 				EDACD0F0234AD7BF0029A35B /* LayoutAnchor.swift in Sources */,
 				AB1E210F22DFFA9B00B30691 /* CharactersViewController.swift in Sources */,
 				AB7050E8232974D0002F1CBA /* DetailView.swift in Sources */,
@@ -338,6 +349,7 @@
 				6083434323495147006FF9D3 /* SendCharacter.swift in Sources */,
 				AB7050EA23297698002F1CBA /* BaseView.swift in Sources */,
 				AB1E211122DFFB5F00B30691 /* CharactersCollectionViewCell.swift in Sources */,
+				9283129A235CF99100B9668C /* LayoutAnchor+operations.swift in Sources */,
 				AB1D597C22DD671100A66B70 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
